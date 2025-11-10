@@ -4,9 +4,9 @@ Lightweight Swift tools for Logitech MX Master mice on macOS. `hid-logger` print
 
 ## Requirements
 
-- macOS 13 (Ventura) or newer (tested on macOS 15 "Tahoe").
+- macOS 13 (Ventura) or newer (tested on macOS 16.1 "Tahoe").
 - Xcode command-line tools / Swift 5.9+
-- Accessibility **and** Input Monitoring permission for the built daemon binary.
+- Accessibility **and** Input Monitoring permission for the built daemon binary. **This is very Important**
 
 ## Build
 
