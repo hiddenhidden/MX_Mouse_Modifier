@@ -1,0 +1,8 @@
+.DS_Store
+.swiftpm
+.build
+*.xcodeproj
+*.log
+mxmasterd
+hid_logger
+MxMasterDaemon.app

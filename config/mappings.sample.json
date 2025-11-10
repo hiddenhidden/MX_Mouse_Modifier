@@ -1,0 +1,8 @@
+{
+  "buttons": {
+    "0x0004": { "key": "leftBracket", "modifiers": ["command"] },
+    "0x0005": { "key": "rightBracket", "modifiers": ["command"] },
+    "0x0006": { "key": "downArrow", "modifiers": ["control"] },
+    "0x0007": { "key": "missioncontrol" }
+  }
+}
