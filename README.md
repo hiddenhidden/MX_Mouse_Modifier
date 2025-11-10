@@ -80,7 +80,11 @@ Edit `~/.config/mxmaster/mappings.json` at any time, then restart the daemon:
 ```bash
 launchctl kickstart -k gui/$UID/com.example.mxmasterd
 ```
+## Noteworth
 
+- By installing this if you ever have trouble with your logitech mouse or keyboard, and seek support from logitech they will likely tell you that you have voided your warrenty. I am not a lawyer, but that is worth taking into account.
+
+  
 ## License
 
 MIT (add your preferred license before publishing).
