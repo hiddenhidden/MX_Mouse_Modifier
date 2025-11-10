@@ -1,12 +1,13 @@
 # MX Master Config
 
-Lightweight Swift tools for Logitech MX Master mice on macOS. `hid-logger` prints raw HID usages so you can learn which buttons fire which codes, and `mxmasterd` maps those usages to Mission Control, App Exposé, or arbitrary key combinations without running Logitech's official software.
+Lightweight Swift tools for Logitech MX Master mice on macOS. `hid-logger` prints raw HID usages so you can learn which buttons fire which codes, and `mxmasterd` maps those usages to Mission Control, App Exposé, or arbitrary key combinations without running Logitech's official software, which needs constant web access and excessive permissions. This little project solves the issue of being stuck with LogiOptions and their various other agents. Once this is set up it works well and maintains persistence fine.
 
 ## Requirements
 
 - macOS 13 (Ventura) or newer (tested on macOS 16.1 "Tahoe").
 - Xcode command-line tools / Swift 5.9+
 - Accessibility **and** Input Monitoring permission for the built daemon binary. **This is very Important**
+- Tested with a Logitech MX Master 4
 
 ## Build
 
@@ -45,7 +46,7 @@ swift run hid-logger
 2. Authorize it in System Settings → Privacy & Security:
    - Accessibility → `+` → select the binary → enable the checkbox.
    - Input Monitoring → `+` → select the binary → enable the checkbox.
-3. (Optional) Wrap it in a minimal `.app` bundle if you prefer to keep binaries inside `~/Applications`.
+3. (Optional - But this worked best for me on Tahoe due to permission issues) Wrap it in a minimal `.app` bundle if you prefer to keep binaries inside `~/Applications`.
 
 ## LaunchAgent (run at login)
 
