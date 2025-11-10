@@ -74,6 +74,16 @@ codesign --force --deep --sign - dist/MXMasterDaemon.app  # optional ad-hoc sign
 
 The script builds `mxmasterd` in release mode, creates `dist/MXMasterDaemon.app`, and writes a clean `Info.plist` with the generic identifier `io.hidden.mxmasterd`. You can then drop the `.app` into `~/Applications` (or zip it for GitHub Releases) without leaking any personal paths. Remember to grant that `.app` Accessibility and Input Monitoring access the first time you launch it.
 
+For GitHub releases, zip the bundle and remind users to ad-hoc sign locally:
+
+```bash
+cd dist
+zip -r ../MXMasterDaemon.zip MXMasterDaemon.app
+codesign --force --deep --sign - /path/to/MXMasterDaemon.app  # run after unzip on each Mac
+```
+
+That keeps the repository clean while letting anyone download, unzip, sign, and authorize the helper themselves.
+
 ## Updating mappings
 
 Edit `~/.config/mxmaster/mappings.json` at any time, then restart the daemon:

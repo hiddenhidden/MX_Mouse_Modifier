@@ -2,6 +2,7 @@
 .swiftpm
 .build
 dist/
+MXMasterDaemon.zip
 *.xcodeproj
 *.log
 mxmasterd
