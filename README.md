@@ -63,6 +63,17 @@ swift run hid-logger
    ```
 3. Logs (if configured in the plist) go to `/tmp/mxmasterd.log` and `/tmp/mxmasterd.err`.
 
+## Create a standalone `.app`
+
+If you prefer distributing a drag-and-drop app bundle:
+
+```bash
+./scripts/package-app.sh
+codesign --force --deep --sign - dist/MXMasterDaemon.app  # optional ad-hoc signature
+```
+
+The script builds `mxmasterd` in release mode, creates `dist/MXMasterDaemon.app`, and writes a clean `Info.plist` with the generic identifier `io.hidden.mxmasterd`. You can then drop the `.app` into `~/Applications` (or zip it for GitHub Releases) without leaking any personal paths. Remember to grant that `.app` Accessibility and Input Monitoring access the first time you launch it.
+
 ## Updating mappings
 
 Edit `~/.config/mxmaster/mappings.json` at any time, then restart the daemon:
